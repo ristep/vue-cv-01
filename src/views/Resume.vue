@@ -39,7 +39,7 @@
 import { ajax } from '../ajax-axios';
 
 export default {
-  name: 'resime',
+  name: 'resume',
   data() {
     return {
       cv: {
@@ -72,3 +72,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+
+</style>

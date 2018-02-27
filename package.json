@@ -13,7 +13,10 @@
     "vue": "^2.5.13",
     "vue-axios": "^2.0.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "w3-css": "^4.0.4",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.1",
