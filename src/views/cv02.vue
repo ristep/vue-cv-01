@@ -13,9 +13,9 @@
 		
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a v-bind:href="'mailto:'+this.cv.email">{{ cv.email }}</a></li>
-				<li v-for="(item, key) in cv.sities" v-bind:key="key">w: <a v-bind:href="'http://'+item" target="_blank">{{item}}</a></li>
-				<li>m: {{ cv.mobitel }}</li>
+				<li>e: <a v-bind:href="'mailto:'+this.cv.email">{{cv.email}}</a></li>
+				<li v-for="(item, key) in cv.sities" v-bind:key="key">w:<a v-bind:href="'http://'+item" target="_blank">&nbsp;{{item}}</a></li>
+				<li>m:&nbsp;{{ cv.mobitel }}</li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -29,12 +29,26 @@
 				</div>
 				
 				<div class="sectionContent"  v-for="(item, key) in cv.profsum.items" v-bind:key="key">	
-					<p>{{ item }}</p>
+					<p>{{ item[1] }}</p>
 				</div>
 			</article>
 			<div class="clear"></div>
 		</section>
-				
+
+		<section>
+			<div class="sectionTitle">
+				<h1>{{cv.skills.title}}</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+						<li v-for="(item, key) in cv.skills.items" v-bind:key="key" >{{ item }}</li>
+						<!-- <li class="last">Javascript</li> -->
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+
 		<section>
 			<div class="sectionTitle">
 				<h1>{{cv.workHistory.title}}</h1>
@@ -44,58 +58,25 @@
 				<article>
 					<h2>{{item.title}} at {{item.company}}</h2>
 					<p class="subDetails">{{item.begin}} - {{item.end}}</p>
-					<div  v-for="(item, key) in item.items" v-bind:key="key">
-						<li>{{item}}</li>
-					</div>
+					<p v-for="(item, key) in item.items" v-bind:key="key">
+						{{item}}
+					</p>
 				</article>
 			</div>
 
-				<!-- <article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">April 2011 - Present</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
-			  -->
-			<div class="clear"></div>
+		 <div class="clear"></div>
 		</section>
-			
+
 		<section>
 			<div class="sectionTitle">
-				<h1>Key Skills</h1>
+				<h1>{{ cv.education.title }}</h1>
 			</div>
 			
 			<div class="sectionContent">
-				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>Education</h1>
-			</div>
-			
-			<div class="sectionContent">
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
-				
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+				<article  v-for="(item, key) in cv.education.items" v-bind:key="key">
+					<h2>{{ item.scool }}</h2>
+					<p class="subDetails">{{ item.degree }}</p>
+					<p>{{ item.field }}</p>
 				</article>
 			</div>
 			<div class="clear"></div>
@@ -103,9 +84,7 @@
 		
 	</div>
 </div>
-
 </div>
-
 </template>
 
 <script>
@@ -115,22 +94,36 @@ export default {
   name: 'cv02',
   data() {
     return {
-      cv: {
-        skills: {
-          title: ''
-        },
-        workHistory: {
-          title: ''
-        },
-        education: {
-          title: ''
-        }
-      },
-      profi: [],
-      proftitle: '',
-      loading: false,
-      malto: ''
-    };
+      cv:{
+				"name": "",
+				"jobtitle": "",
+				"adress": "",
+				"homtetel": "",
+				"mobitel": "",
+				"email": "",
+				"sities": [],
+				"profsum": {
+					"title": "",
+					"items": []
+				},
+				"skills": {
+					"title": "",
+					"items": []
+				},
+				"languages":{
+					"title": "",
+					"items": []
+				},
+				"workHistory": {
+					"title": "",
+					"items": []
+				},
+				"education": {
+					"title": "",
+					"items": []
+				}
+			}
+		}	
   },
   async mounted() {
     this.loading = true;
@@ -173,8 +166,7 @@ section {
   display: block;
 }
 
-html,
-body {
+#top {
   background: #181818;
   font-family: 'Lato', helvetica, arial, sans-serif;
   font-size: 16px;
