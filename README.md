@@ -1,10 +1,9 @@
-# this file is under construction
 # vue-cv
 
-CV &amp; Resume created with VueJS  and JSON 
-Resume and CV page build with VueJs
+CV &amp; Resume created with Vue  and JSON 
+Resume and CV page build with Vue.js
 
-VueJS is best javascript framework I’ve ever been learned. 
+Vue is best javascript framework I’ve ever been learned. 
 For that reason, I decided to make my CV framed in Vue.
 
 An online live demo is here.
