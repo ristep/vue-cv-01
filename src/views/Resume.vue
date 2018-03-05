@@ -1,5 +1,5 @@
 <template>
-<div id="top">
+<div id="pozadina">
 	<div id="cv" class="instaFade">
 		<div class="mainDetails">
 			<div id="headshot" class="quickFade">
@@ -208,10 +208,13 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 
 @media print
 {    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+  .no-print, .no-print * {
+  	display: none !important;
+  }
+	
+	#cv {
+		box-shadow: none !important; 
+	}
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
@@ -221,7 +224,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 .mspace { 
 	height: $met-deb;  /* Can be anything */
 	position: relative;
-	background: white;
+	background: rgb(255, 255, 255);
 	border-radius: $met-deb;
 	padding: 0px;
 }
@@ -235,8 +238,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 	padding: 0px;
 }
 
-#top {
-  background: #181818;
+#pozadina {
+  background: white;
   font-family: $fnt-par;
   font-size: 16px;
   color: #222;
@@ -259,10 +262,11 @@ p {
   max-width: 800px;
   background: #f3f3f3;
   margin: 30px auto;
+	box-shadow: 2px 3px 9px 2px rgb(150, 150, 150); 
 }
 
 .mainDetails {
-  padding: 25px 35px;
+  padding: 20px 30px;
   border-bottom: 2px solid $clr-01;
   background: #ededed;
 }

@@ -198,15 +198,18 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 @media print {
-    .page-break {
+  .page-break {
 			page-break-inside: avoid;
-		}
-    @page div {	
+	}
+  @page div {	
 		padding:50px;
-}
-		// .sectionContent {
-		// 	margin-top: 20px;
-		// }
+	}
+	#cv {
+		box-shadow: none !important; 
+	}
+	// .sectionContent {
+  // 	margin-top: 20px;
+	// }
 }
 
 .mspace { 
@@ -227,7 +230,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 #top {
-  background: #181818;
   font-family: $fnt-par;
   font-size: 16px;
   color: #222;
@@ -250,6 +252,7 @@ p {
   max-width: 800px;
   background: #f3f3f3;
   margin: 30px auto;
+	box-shadow: 2px 3px 9px 2px rgb(150, 150, 150); 
 }
 
 .mainDetails {

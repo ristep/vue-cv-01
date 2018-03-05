@@ -3,7 +3,7 @@
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="../assets/headshot.jpg" alt="Alan Smith" />
+			<!-- <img src="../assets/dedo02.png" alt="Alan Smith" /> -->
 		</div>
 		
 		<div id="name">
@@ -35,19 +35,24 @@
 			<div class="clear"></div>
 		</section>
 
-		<section>
-			<div class="sectionTitle">
-				<h1>{{cv.skills.title}}</h1>
-			</div>
-			
-			<div class="sectionContent">
-				<ul class="keySkills">
-						<li v-for="(item, key) in cv.skills.items" v-bind:key="key" >{{ item }}</li>
-						<!-- <li class="last">Javascript</li> -->
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</section>
+			<section> <!-- Skills -->
+				<div class="sectionTitle">
+					<h1>{{cv.skills.title}}</h1>
+				</div>
+				<div class="sectionContent">
+					<ul class="keySkills">
+							<li v-for="(item, key) in cv.skills.items" v-bind:key="key" >
+  					 		<div>
+									<div class="mspace" style="width: 100%">
+										<div class="level" v-bind:style="'width:'+item[0]+'%'"></div>
+									</div>
+									<p>{{ item[1] }}</p>
+								</div>
+							</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</section>
 
 		<section>
 			<div class="sectionTitle">
@@ -59,13 +64,32 @@
 					<h2>{{item.title}} at {{item.company}}</h2>
 					<p class="subDetails">{{item.begin}} - {{item.end}}</p>
 					<p v-for="(item, key) in item.items" v-bind:key="key">
-						{{item}}
+						{{item[1]}}
 					</p>
 				</article>
 			</div>
 
 		 <div class="clear"></div>
 		</section>
+
+			<section> <!-- Languages -->
+				<div class="sectionTitle">
+					<h1>{{cv.languages.title}}</h1>
+				</div>
+				<div class="sectionContent">
+					<ul class="keySkills">
+							<li v-for="(item, key) in cv.languages.items" v-bind:key="key" >
+  					 		<div>
+									<div class="mspace" style="width: 100%">
+										<div class="level" v-bind:style="'width:'+item[0]+'%'"></div>
+									</div>
+									<p>{{ item[1] }}</p>
+								</div>
+							</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</section>
 
 		<section>
 			<div class="sectionTitle">
@@ -140,35 +164,80 @@ export default {
   }
 };
 </script>
-<style lang="css" scoped>
-@import url('http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300');
+
+<style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Forum|Karma:300,400,700|Playfair+Display:400,400i,900&amp;subset=cyrillic");
+// font-family: 'Karma', serif;
+// font-family: 'Playfair Display', serif;
+// font-family: 'Forum', cursive;
+
+$fnt-par:  'Forum', cursive;
+$fnt-h1:   'Karma', serif;
+$fnt-h2:   'Playfair Display', serif;
+
+$clr-01: rgb(202, 100, 40);
+$clr-02: rgba(212, 154, 121, 0.753);
+$clr-03: rgb(163, 88, 45);
+
+$met-deb: 3px;
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
-border:0;
-font:inherit;
-font-size:100%;
-margin:0;
-padding:0;
-vertical-align:baseline;
+	border:0;
+	font:inherit;
+	font-size:100%;
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+// @media print
+// {   
+// 	html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+// 		border:0;
+// 		font:inherit;
+// 		font-size:96%;
+//     width: 100%;
+// 		margin:0;
+// 		padding:0;
+// 		vertical-align:baseline;
+// 	}
+// }
+
+@media print
+{    
+  .no-print, .no-print * {
+  	display: none !important;
+  }
+	
+	#cv {
+		box-shadow: none !important; 
+	}
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
   display: block;
 }
 
-#top {
-  background: #181818;
-  font-family: 'Lato', helvetica, arial, sans-serif;
+.mspace { 
+	height: $met-deb;  /* Can be anything */
+	position: relative;
+	background: rgb(255, 255, 255);
+	border-radius: $met-deb;
+	padding: 0px;
+}
+.level {
+	height: $met-deb;  /* Can be anything */
+	position: absolute;
+	left: 0;
+	top: 0px;
+	background: $clr-02;
+	border-radius: $met-deb;
+	padding: 0px;
+}
+
+#pozadina {
+  background: white;
+  font-family: $fnt-par;
   font-size: 16px;
   color: #222;
 }
@@ -179,9 +248,10 @@ section {
 
 p {
   font-size: 1em;
-  line-height: 1.4em;
-  margin-bottom: 20px;
+  line-height: 1.2em;
+  //margin-bottom: 10px;
   color: #444;
+	padding-bottom: 0px;
 }
 
 #cv {
@@ -189,25 +259,26 @@ p {
   max-width: 800px;
   background: #f3f3f3;
   margin: 30px auto;
+	box-shadow: 2px 3px 9px 2px rgb(150, 150, 150); 
 }
 
 .mainDetails {
-  padding: 25px 35px;
-  border-bottom: 2px solid #cf8a05;
+  padding: 20px 30px;
+  border-bottom: 2px solid $clr-01;
   background: #ededed;
 }
 
 #name h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 700;
-  font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
-  margin-bottom: -6px;
+  font-family: $fnt-h1;
+  margin-bottom: 10px;
 }
 
 #name h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-left: 2px;
-  font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+  font-family: $fnt-h1; // ori 'Rokkitt', Helvetica, Arial, sans-serif;
 }
 
 #mainArea {
@@ -218,14 +289,13 @@ p {
   width: 12.5%;
   float: left;
   margin-right: 30px;
+  img {
+  	width: 100%;
+  	height: auto;
+  	border-radius: 40px;
+	}
 }
 
-#headshot img {
-  width: 100%;
-  height: auto;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-}
 
 #name {
   float: left;
@@ -250,15 +320,11 @@ p {
 a[href^='tel'] {
   color: #444;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
 
 #contactDetails ul li a:hover {
-  color: #cf8a05;
+  color: $clr-03;
 }
 
 section {
@@ -285,14 +351,14 @@ section:last-child {
 }
 
 .sectionTitle h1 {
-  font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+  font-family: $fnt-h1;// ori 'Rokkitt', Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 1.5em;
-  color: #cf8a05;
+  color: $clr-03;
 }
 
 .sectionContent h2 {
-  font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+  font-family: $fnt-h1; //'Rokkitt', Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   margin-bottom: -2px;
 }
@@ -305,8 +371,6 @@ section:last-child {
 
 .keySkills {
   list-style-type: none;
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
   column-count: 3;
   margin-bottom: 20px;
   font-size: 1em;
@@ -323,8 +387,6 @@ section:last-child {
   }
 
   .keySkills {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
     column-count: 2;
   }
 }
@@ -359,8 +421,6 @@ section:last-child {
   }
 
   .keySkills {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
     column-count: 2;
   }
 }
@@ -379,8 +439,6 @@ section:last-child {
   }
 
   .keySkills {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
     column-count: 1;
   }
 
@@ -389,132 +447,4 @@ section:last-child {
     margin-bottom: 4px;
   }
 }
-
-@media print {
-  #cv {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes reset {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes reset {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes reset {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.instaFade {
-  -webkit-animation-name: reset, fade-in;
-  -webkit-animation-duration: 1.5s;
-  -webkit-animation-timing-function: ease-in;
-
-  -moz-animation-name: reset, fade-in;
-  -moz-animation-duration: 1.5s;
-  -moz-animation-timing-function: ease-in;
-
-  animation-name: reset, fade-in;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in;
-}
-
-.quickFade {
-  -webkit-animation-name: reset, fade-in;
-  -webkit-animation-duration: 2.5s;
-  -webkit-animation-timing-function: ease-in;
-
-  -moz-animation-name: reset, fade-in;
-  -moz-animation-duration: 2.5s;
-  -moz-animation-timing-function: ease-in;
-
-  animation-name: reset, fade-in;
-  animation-duration: 2.5s;
-  animation-timing-function: ease-in;
-}
-
-.delayOne {
-  -webkit-animation-delay: 0, 0.5s;
-  -moz-animation-delay: 0, 0.5s;
-  animation-delay: 0, 0.5s;
-}
-
-.delayTwo {
-  -webkit-animation-delay: 0, 1s;
-  -moz-animation-delay: 0, 1s;
-  animation-delay: 0, 1s;
-}
-
-.delayThree {
-  -webkit-animation-delay: 0, 1.5s;
-  -moz-animation-delay: 0, 1.5s;
-  animation-delay: 0, 1.5s;
-}
-
-.delayFour {
-  -webkit-animation-delay: 0, 2s;
-  -moz-animation-delay: 0, 2s;
-  animation-delay: 0, 2s;
-}
-
-.delayFive {
-  -webkit-animation-delay: 0, 2.5s;
-  -moz-animation-delay: 0, 2.5s;
-  animation-delay: 0, 2.5s;
-}
 </style>
-
