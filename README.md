@@ -14,7 +14,7 @@ An online live demo is here.
 $ mkdir vue-cv
 $ cd vue-cv
 ```
-clone from this [git](https://github.com/ristep/vue-cv.git) or extract [.zip](https://github.com/ristep/vue-cv/archive/master.zip) in vue-cv )
+Clone this [git](https://github.com/ristep/vue-cv.git) or extract [.zip](https://github.com/ristep/vue-cv/archive/master.zip) in created `vue-cv`, then:  
 
 ```sh
 $ yarn 
