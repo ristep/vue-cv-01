@@ -1,4 +1,4 @@
-#this is under construction
+# this file is under construction
 # vue-cv
 
 CV &amp; Resume created with VueJS  and JSON 
