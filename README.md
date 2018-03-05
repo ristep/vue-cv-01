@@ -13,7 +13,10 @@ An online live demo is here.
 ```sh
 $ mkdir vue-cv
 $ cd vue-cv
-# (clone from this git or extract .zip in vue-cv )
+```
+clone from this [git](https://github.com/ristep/vue-cv.git) or extract [.zip](https://github.com/ristep/vue-cv/archive/master.zip) in vue-cv )
+
+```sh
 $ yarn 
 $ yarn serve
 ```
