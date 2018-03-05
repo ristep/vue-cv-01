@@ -39,7 +39,7 @@ Want to contribute? Great! :)
 
 ### Todos
 
-- Some editor for cv.jonson.
+- Some editor for cv.json.
  - Write some Tests.
  - Add Night Mode :)
 
