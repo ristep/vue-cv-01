@@ -8,30 +8,27 @@ VueJS is best javascript framework I’ve ever been learned.
 For that reason, I decided to make my CV framed in Vue.
 
 An online live demo is here.
-Software is licenced under MIT
 
 ### Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
 ```sh
-$ cd dillinger
-$ npm install -d
-$ node app
+$ mkdir vue-cv
+$ cd vue-cv
+# (clone from this git or extract .zip in vue-cv )
+$ yarn 
+$ yarn serve
 ```
+If don't have yarn install it with this:
+```sh
+$ sudo apt-get update 
+$ sudo apt-get install yarn
+```
+For other than Ubuntu/Debian oses see [this].(https://yarnpkg.com/lang/en/docs/install/)
 
 For production environments...
-
 ```sh
-$ npm install --production
-$ NODE_ENV=production node app
+$ yarn run buld
 ```
-
-### Plugins
-
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
 | Plugin | README |
 | ------ | ------ |
