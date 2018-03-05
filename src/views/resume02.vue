@@ -271,7 +271,7 @@ p {
 #name h2 {
   font-size: 2em;
   margin-left: 2px;
-  font-family: $fnt-h1; // ori 'Rokkitt', Helvetica, Arial, sans-serif;
+  font-family: $fnt-h1; 
 }
 
 #mainArea {
