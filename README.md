@@ -43,5 +43,5 @@ Want to contribute? Great! :)
 
 License
 ----
-MIT
+[MIT](https://opensource.org/licenses/MIT)
 **Free Software, Yep!**
