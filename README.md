@@ -31,7 +31,7 @@ $ yarn run buld
 ### Server side
 
 Put [this](https://github.com/ristep/vue-cv/tree/master/src/server-side) files on some web server with .php 
-and change 'baseURL: "http://capi.rp/",' as needet, in [ajax-axios.js](https://github.com/ristep/vue-cv/blob/master/src/ajax-axios.js).
+and change `baseURL: "http://capi.rp/",` as needet, in [ajax-axios.js](https://github.com/ristep/vue-cv/blob/master/src/ajax-axios.js).
 
 ### Development
 
@@ -39,7 +39,7 @@ Want to contribute? Great! :)
 
 ### Todos
 
-- Some editor for cv.json.
+- Some editor for `cv.json`.
  - Write some Tests.
  - Add Night Mode :)
 
