@@ -23,7 +23,7 @@ If don't have yarn install it with this:
 $ sudo apt-get update 
 $ sudo apt-get install yarn
 ```
-For other than Ubuntu/Debian oses see [this].(https://yarnpkg.com/lang/en/docs/install/)
+For other than Ubuntu/Debian see [this article](https://yarnpkg.com/lang/en/docs/install/) 
 
 For production environments...
 ```sh
