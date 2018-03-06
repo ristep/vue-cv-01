@@ -13,6 +13,7 @@
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.13",
     "vue-axios": "^2.0.2",
+    "vue-loader": "^14.1.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "w3-css": "^4.0.4",

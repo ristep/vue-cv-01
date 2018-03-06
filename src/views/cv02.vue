@@ -2,6 +2,7 @@
 <div id="top">
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
+		
 		<div id="headshot" class="quickFade">
 			<!-- <img src="../assets/dedo02.png" alt="Alan Smith" /> -->
 		</div>
@@ -19,7 +20,8 @@
 			</ul>
 		</div>
 		<div class="clear"></div>
-	</div>
+
+	</div> 
 	
 	<div id="mainArea" class="quickFade delayFive">
 		<section>
