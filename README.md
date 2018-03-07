@@ -1,4 +1,4 @@
-## an outdated version new rebuild version hear ristep/vue-cv
+## an outdated version new rebuilded version is hear [ristep/vue-cv](https://github.com/ristep/vue-cv)
 # vue-cv
 
 CV &amp; Resume created with Vue and JSON
